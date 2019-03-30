@@ -47,11 +47,8 @@
       <view class='grid col-1'>
         <view class='  shine'></view>
 
-        <view >
-          <navigator open-type='navigateBack' >
-            <view class='person'></view>
-          </navigator>
-        </view>
+            <view class='person' style='background-color:grey'></view>
+
         <view  >
           <navigator url='/pages/cloumn/cloumn' open-type='redirect'>
             <view class='classify'></view>

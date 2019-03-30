@@ -53,11 +53,11 @@
       <view class='shine'></view>
 
       <view bindtap='changeloading'>
-        <navigator open-type='navigateBack' >
+        <navigator open-type='redirect' url='/pages/drawer/drawer' >
           <view class='person'></view>
         </navigator>
       </view>
-      <view class=' toggle' bindtap='toggle'></view>
+      <view class=' toggle' bindtap='toggle' style='background-color:grey'></view>
     </view>
   </view>
 </view>
