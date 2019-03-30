@@ -1,6 +1,6 @@
 <view class="bg-img bg-mask padding-tb-back" style="background-image: url(https://images.unsplash.com/photo-1553505748-1cb258c0bc66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);height:{{height}}rpx">
   <!-- 授权用户登录信息 -->
-  <view class="margin-xl padding-xl radius shadow-lg">
+  <view class="margin-xl padding-xl radius ">
     <view class="flex justify-center">
       <!-- 通过按钮绑定用户授权 -->
       <!-- 当第一次加载页面时显示授权按钮，如果已授权则显示用户头像 -->
@@ -10,11 +10,11 @@
       <block wx:else>
         <view class='text-center'>
           <navigator url='/pages/drawer/drawer'>
-            <view class="cu-avatar xl round solids shadow-wrap" style="background-image:url({{userInfo.avatarUrl}})">
+            <view class="cu-avatar xl round solids " style="background-image:url({{userInfo.avatarUrl}})">
             </view>
           </navigator>
 
-          <view class="padding text-white text-l shadow-warp">{{userInfo.nickName}}</view>
+          <view class="padding text-white text-l ">{{userInfo.nickName}}</view>
         </view>
       </block>
 
