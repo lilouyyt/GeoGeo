@@ -1,0 +1,63 @@
+<!-- 自定义顶部 -->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-pink" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn icon-my icon shadow margin-xs'> </button>
+    <block wx:else>
+      <navigator url='/pages/drawer/drawer' open-type='redirect' >
+        <view class="cu-avatar round" style="background-image:url({{userInfo.avatarUrl}})" bindtap="showModal" data-target="viewModal"></view>
+      </navigator>
+
+    </block>
+    <!-- 搜索框 -->
+    <view class='search-form round ' style='margin:0 10rpx'>
+      <text class="icon-search"></text>
+      <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search" bindconfirm="search"></input>
+    </view>
+  </view>
+  <!-- 进度条加载 -->
+  <view class='load-progress {{loadProgress!=0?"show":"hide"}}' style="top:{{CustomBar}}px;">
+    <view class='load-progress-bar bg-green' style="transform: translate3d(-{{100-loadProgress}}%, 0px, 0px);"></view>
+    <view class='load-progress-spinner text-green'></view>
+  </view>
+</view>
+
+
+<!-- tab分类栏 -->
+
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}" wx:if="{{!searching}}">
+  <!-- tab1 -->
+  <view class='flex text-center' wx:if="{{cloumnname==1}}">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{newscloumn}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
+
+  <!-- tab2 -->
+  <block wx:else>
+    <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{techcloumn}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+      {{item}}
+    </view>
+  </block>
+
+</scroll-view>
+<view wx:else>{{moto}}</view>
+
+<!-- 主页 -->
+
+<!-- 导航栏 -->
+<view class="round-click" bindtap="showModal" data-target="bottomModal" wx-if='{{!hidden}}'>
+</view>
+<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}" bindtap="hideModal" id="global">
+  <view class=" " style='border-radius:60rpx;boder:none;position:fixed;right:40rpx;bottom:40px;width:80rpx;'>
+    <view class='grid col-1'>
+      <view class='shine'></view>
+
+      <view bindtap='changeloading'>
+        <navigator open-type='navigateBack' >
+          <view class='person'></view>
+        </navigator>
+      </view>
+      <view class=' toggle' bindtap='toggle'></view>
+    </view>
+  </view>
+</view>

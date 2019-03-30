@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/back/back",
+    "pages/cloumn/cloumn",
+    "pages/drawer/drawer",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  }
+}

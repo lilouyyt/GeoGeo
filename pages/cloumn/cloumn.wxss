@@ -1,0 +1,16 @@
+.box {  
+  margin: 20rpx; 
+}
+
+.box view.cu-bar {
+  margin-top: 20rpx; 
+}
+
+.foottab {
+  position: fixed;
+  bottom:1rpx;
+  width:100%;
+  border-radius: 50rpx
+}
+
+@import '/pages/back/back'
