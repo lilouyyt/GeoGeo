@@ -57,7 +57,7 @@
           <view class='person'></view>
         </navigator>
       </view>
-      <view class=' toggle' bindtap='toggle' style='background-color:grey'></view>
+      <view class=' toggle' bindtap='toggle' style='background-color:rgb(85, 47, 47)'></view>
     </view>
   </view>
 </view>

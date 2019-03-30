@@ -47,7 +47,7 @@
       <view class='grid col-1'>
         <view class='  shine'></view>
 
-            <view class='person' style='background-color:grey'></view>
+            <view class='person' style='background-color:rgb(85, 47, 47)'></view>
 
         <view  >
           <navigator url='/pages/cloumn/cloumn' open-type='redirect'>
