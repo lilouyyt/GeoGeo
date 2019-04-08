@@ -1,7 +1,7 @@
 <!-- 主界面 -->
 <view class="DrawerPage {{modalName=='viewModal'?'show':''}}">
   <view class="cu-custom" style="height:{{CustomBar}}px;">
-    <view class="cu-bar tabbar bg-gradual-pink fixed" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class="cu-bar tabbar bg-grey fixed" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
       <view class="action text-center" style='width: 100rpx'>
         <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn icon-my icon bg-green shadow'> </button>
         <block wx:else>
@@ -11,19 +11,19 @@
       <block>
         <view class="action " bindtap='tabSelect' data-id="1">
           <view class='icon-cu-image'>
-            <image src="/pages/images/trophy{{1==TabCur?'_cur':''}}.png"></image>
+            <image src="/pages/images/meh{{1==TabCur?'_cur':''}}.png"></image>
           </view>
         </view>
         <view class="action " bindtap='tabSelect' data-id="2">
           <view class='icon-cu-image'>
-            <image src="/pages/images/star{{2==TabCur?'_cur':''}}.png"></image>
+            <image src="/pages/images/smile{{2==TabCur?'_cur':''}}.png"></image>
             <view class='cu-tag badge'>99+</view>
           </view>
         </view>
         <view class="action " bindtap='tabSelect' data-id="3">
           <view class='icon-cu-image'>
-            <image src="/pages/images/comment{{3==TabCur?'_cur':''}}.png"></image>
-            <view class='cu-tag badge'>99+</view>
+            <image src="/pages/images/meh{{3==TabCur?'_cur':''}}.png"></image>
+            <view class='cu-tag badge'></view>
           </view>
         </view>
       </block>
@@ -40,22 +40,37 @@
 
   <!-- 悬浮导航栏 -->
   <!--圆形点击框  -->
-  <view class="round-click" bindtap="showModal" data-target="bottomModal" wx-if='{{!hidden}}'>
-  </view>
-  <view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}" bindtap="hideModal" id="global">
-    <view class=" " style='border-radius:60rpx;boder:none;position:fixed;right:40rpx;bottom:40px;width:80rpx;'>
-      <view class='grid col-1'>
-        <view class='  shine'></view>
 
-            <view class='person' style='background-color:rgb(85, 47, 47)'></view>
+  <view class='navg'>
 
-        <view  >
-          <navigator url='/pages/cloumn/cloumn' open-type='redirect'>
-            <view class='classify'></view>
-          </navigator>
-        </view>
+    <view class='grid col-1'>
+      <view class='shine'></view>
+
+      <view>
+        <navigator url='/pages/cloumn/cloumn' open-type='redirect'>
+          <view class='classify'></view>
+        </navigator>
+      </view>
+
+      <view>
+        <navigator url='/pages/timeline/timeline' open-type='redirect'>
+          <view class='toggle'></view>
+        </navigator>
+      </view>
+
+
+      <view>
+        <navigator url='/pages/drawer/drawer' open-type='redirect'>
+          <view class='person'></view>
+        </navigator>
+      </view>
+      <view>
+        <navigator open-type='navigateBack'>
+          <view class='round-click'></view>
+        </navigator>
       </view>
     </view>
+
   </view>
 </view>
 

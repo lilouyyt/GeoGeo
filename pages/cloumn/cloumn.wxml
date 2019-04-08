@@ -1,6 +1,6 @@
 <!-- 自定义顶部 -->
 <view class="cu-custom" style="height:{{CustomBar}}px;">
-  <view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px; ">
+  <view class="cu-bar fixed bg-grey" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px; ">
     <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn icon-my icon shadow margin-xs'> </button>
     <block wx:else>
       <navigator url='/pages/drawer/drawer' open-type='redirect' >
@@ -21,38 +21,81 @@
   </view>
 </view>
 
-<view sytle="boder-radius:100px;background-color:black">
-<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}" wx:if="{{!searching}}" >
+<view >
+  <scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}" wx:if="{{!searching}}">
+    <block>
+      <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{techcloumn}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+        {{item}}
+      </view>
+    </block>
 
-  <block>
-    <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{techcloumn}}" wx:key bindtap='tabSelect' data-id="{{index}}">
-      {{item}}
-    </view>
-  </block>
-
-</scroll-view>
-<view wx:else>{{moto}}</view>
+  </scroll-view>
+  <view wx:else>{{moto}}</view>
 </view>
 
 
+<view class='navg'>
 
+  <view class='grid col-1'>
+    <view class='shine'></view>
+
+    <view>
+      <navigator url='/pages/cloumn/cloumn' open-type='redirect'>
+        <view class='classify'></view>
+      </navigator>
+    </view>
+
+    <view>
+      <navigator url='/pages/timeline/timeline' open-type='redirect'>
+        <view class='toggle'></view>
+      </navigator>
+    </view>
+
+    <view>
+      <navigator url='/pages/drawer/drawer' open-type='redirect'>
+        <view class='person'></view>
+      </navigator>
+    </view>
+      <view>
+        <navigator open-type='navigateBack'>
+          <view class='round-click'></view>
+        </navigator>
+      </view>
+  </view>
+</view>
 
 <!-- 主页 -->
 
 <!-- 导航栏 -->
-<view class="round-click" bindtap="showModal" data-target="bottomModal" wx-if='{{!hidden}}'>
-</view>
+
 <view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}" bindtap="hideModal" id="global">
   <view class=" " style='border-radius:60rpx;boder:none;position:fixed;right:40rpx;bottom:40px;width:80rpx;'>
     <view class='grid col-1'>
       <view class='shine'></view>
 
       <view bindtap='changeloading'>
-        <navigator open-type='redirect' url='/pages/drawer/drawer' >
+        <navigator open-type='redirect' url='/pages/drawer/drawer'>
           <view class='person'></view>
         </navigator>
       </view>
       <view class=' toggle' bindtap='toggle' style='background-color:rgb(85, 47, 47)'></view>
+    </view>
+  </view>
+</view>
+
+
+<view class="cu-card article {{isCard?'no-card':''}}">
+  <view wx:for="[1,2,3]" wx:key class="cu-item shadow">
+    <view class="title">这里有个戏精铲屎官，主子了解一下？</view>
+    <view class="content">
+      <image src="https://image.weilanwl.com/img/4x3-3.jpg" mode="aspectFill"></image>
+      <view class="desc">
+        <view class='text-content'> 这是一个伪铲屎官为了给自己的程序凑字数瞎几把乱写的一堆文字，了解一下就OK！ヾ(=･ω･=)o</view>
+        <view>
+          <view class='cu-tag bg-red light sm round'>假装有猫系列</view>
+          <view class='cu-tag bg-green light sm round'>戏精系列</view>
+        </view>
+      </view>
     </view>
   </view>
 </view>

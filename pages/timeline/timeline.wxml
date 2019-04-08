@@ -1,0 +1,45 @@
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-grey " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view style='margin-left:300rpx'>时间轴</view>
+  </view>
+</view>
+<view class="cu-timeline">
+  <view class="cu-time">昨天</view>
+  <view class='cu-item cur icon-noticefill' wx:for="[1,2,3,4]">
+    <view class="content  shadow-blur">
+    
+      <text>22:22</text> 【广州市】快件已到达地球
+    </view>
+  </view>
+  
+</view>
+
+
+
+<view class='navg'>
+
+  <view class='grid col-1'>
+    <view class='shine'></view>
+
+    <view>
+      <navigator url='/pages/cloumn/cloumn' open-type='redirect'>
+        <view class='classify'></view>
+      </navigator>
+    </view>
+      <view>
+        <navigator url='/pages/timeline/timeline' open-type='redirect'>
+          <view class='toggle'></view>
+        </navigator>
+      </view>
+    <view>
+      <navigator url='/pages/drawer/drawer' open-type='redirect'>
+        <view class='person'></view>
+      </navigator>
+    </view>
+    <view>
+      <navigator open-type='navigateBack'>
+        <view class='round-click'></view>
+      </navigator>
+    </view>
+  </view>
+</view>

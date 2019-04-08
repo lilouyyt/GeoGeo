@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    motto: '站在巨人的肩膀上',
+    motto: '我们只作科技资讯的搬运工，用零碎的时间换种方式阅读',
     userInfo: {},
     hasUserInfo: false,
     height:0,

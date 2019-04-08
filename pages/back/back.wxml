@@ -1,4 +1,4 @@
-<view class="bg-img bg-mask padding-tb-back" style="background-image: url(https://images.unsplash.com/photo-1553505748-1cb258c0bc66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);height:{{height}}rpx">
+<view class="bg-img bg-mask padding-tb-back" style="background-image: url(https://images.unsplash.com/photo-1554370736-052528cd11f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);height:{{height}}rpx">
   <!-- 授权用户登录信息 -->
   <view class="margin-xl padding-xl radius ">
     <view class="flex justify-center">
@@ -25,49 +25,38 @@
   </view>
 </view>
 
+<view class='navg'>
 
-
-<!--圆形点击框  -->
-<view class="round-click" bindtap="showModal" data-target="bottomModal" wx-if="{{!hidden}}"></view>
-
-
-
-<!-- <view class="cu-modal {{modalName=='Image'?'show':''}}">
- <view>tt</view>
-  <view class="cu-dialog " style='border-radius:60rpx;boder:none'>
-    <view class="bg-img" style="background-image: {{backgroundurl}};height:300rpx;background-size:cover;background-position:center">
-      <view class="cu-bar justify-end text-white">
-        <view class='action' bindtap='hideModal'>
-          <text class='icon-close '></text>
-        </view>
-      </view>
-      <view class="flex" wx-if="{{!loading}}" >
-      <view class='flex-sub   shine' bindtap='changeloading'></view>
-             <view class='flex-sub  margin-0 '></view>
-      <view class='flex-sub person' bindtap='changeloading'></view>
-             <view class='flex-sub  margin-0 '></view>
-       <view class='flex-sub classify' bindtap='changeloading'></view>
+  <view class='grid col-1'>
+    <view>
+      <navigator url='/pages/cloumn/cloumn'>
+        <view class='shine'></view>
+      </navigator>
     </view>
+    <view>
+      <navigator url='/pages/cloumn/cloumn'>
+        <view class='classify'></view>
+      </navigator>
     </view>
 
-  </view>
-</view> -->
-
-<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}" bindtap="hideModal" id="global">
-  <view style='border-radius:60rpx;boder:none;position:fixed;right:40rpx;bottom:40px;width:80rpx;'>
-    <view class='grid col-1'>
-      <view class='shine' ></view>
-
-      <view >
-        <navigator url='/pages/drawer/drawer'>
-          <view class='person'></view>
-        </navigator>
-      </view>
-      <view >
-        <navigator url='/pages/cloumn/cloumn'>
-          <view class='classify'></view>
-        </navigator>
-      </view>
+    <view>
+      <navigator url='/pages/timeline/timeline'>
+        <view class='toggle'></view>
+      </navigator>
     </view>
+
+
+    <view>
+      <navigator url='/pages/drawer/drawer'>
+        <view class='person'></view>
+      </navigator>
+    </view>
+
+    <view>
+      <navigator open-type='navigateBack'>
+        <view class='round-click'></view>
+      </navigator>
+    </view>
+
   </view>
 </view>

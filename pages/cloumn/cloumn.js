@@ -82,11 +82,7 @@ Page({
       hidden: false
     })
   },
-  toggle(e){
-    this.setData({
-      cloumnname:(-1)*this.data.cloumnname
-    })
-  },
+
   tabSelect(e) {
     console.log(e);
     this.setData({
