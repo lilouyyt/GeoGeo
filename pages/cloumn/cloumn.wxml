@@ -21,26 +21,21 @@
   </view>
 </view>
 
+<view sytle="boder-radius:100px;background-color:black">
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}" wx:if="{{!searching}}" >
 
-<!-- tab分类栏 -->
-
-<view class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}" wx:if="{{!searching}}" style='background-clolor;border-radius:100rpx ; margin:0 10px 0 10px'>
-  <!-- tab1 -->
-  <view class=' flex text-center' wx:if="{{cloumnname==1}}" style='margin:0 50px 0 50px;height:50px'>
-    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{newscloumn}}" wx:key bindtap='tabSelect' data-id="{{index}}">
-      {{item}}
-    </view>
-  </view>
-
-  <!-- tab2 -->
-  <block wx:else>
+  <block>
     <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{techcloumn}}" wx:key bindtap='tabSelect' data-id="{{index}}">
       {{item}}
     </view>
   </block>
 
-</view>
+</scroll-view>
 <view wx:else>{{moto}}</view>
+</view>
+
+
+
 
 <!-- 主页 -->
 
