@@ -1,7 +1,7 @@
 <!-- 主界面 -->
 <view class="DrawerPage {{modalName=='viewModal'?'show':''}}">
   <view class="cu-custom" style="height:{{CustomBar}}px;">
-    <view class="cu-bar tabbar bg-black fixed" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class="cu-bar tabbar bg-gradual-pink fixed" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
       <view class="action text-center" style='width: 100rpx'>
         <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn icon-my icon bg-green shadow'> </button>
         <block wx:else>

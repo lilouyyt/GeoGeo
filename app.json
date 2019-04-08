@@ -1,7 +1,8 @@
 {
   "pages": [
+        "pages/cloumn/cloumn",
     "pages/back/back",
-    "pages/cloumn/cloumn",
+
     "pages/drawer/drawer",
     "pages/index/index"
   ],

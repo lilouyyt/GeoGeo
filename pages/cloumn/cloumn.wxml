@@ -1,17 +1,17 @@
 <!-- 自定义顶部 -->
 <view class="cu-custom" style="height:{{CustomBar}}px;">
-  <view class="cu-bar fixed bg-gradual-pink" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn icon-my icon shadow margin-xs'> </button>
+  <view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px; ">
+    <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn icon-my icon shadow margin-xs'> </button>
     <block wx:else>
       <navigator url='/pages/drawer/drawer' open-type='redirect' >
         <view class="cu-avatar round" style="background-image:url({{userInfo.avatarUrl}})" bindtap="showModal" data-target="viewModal"></view>
       </navigator>
 
-    </block>
+    </block> -->
     <!-- 搜索框 -->
-    <view class='search-form round ' style='margin:0 10rpx'>
+    <view class='search-form round ' style='background-color:white;padding:0 0 0 0;margin:0 0 0 10px'>
       <text class="icon-search"></text>
-      <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search" bindconfirm="search"></input>
+      <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search" bindconfirm="search" class='radius'></input>
     </view>
   </view>
   <!-- 进度条加载 -->
@@ -24,9 +24,9 @@
 
 <!-- tab分类栏 -->
 
-<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}" wx:if="{{!searching}}">
+<view class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}" wx:if="{{!searching}}" style='background-clolor;border-radius:100rpx ; margin:0 10px 0 10px'>
   <!-- tab1 -->
-  <view class='flex text-center' wx:if="{{cloumnname==1}}">
+  <view class=' flex text-center' wx:if="{{cloumnname==1}}" style='margin:0 50px 0 50px;height:50px'>
     <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{newscloumn}}" wx:key bindtap='tabSelect' data-id="{{index}}">
       {{item}}
     </view>
@@ -39,7 +39,7 @@
     </view>
   </block>
 
-</scroll-view>
+</view>
 <view wx:else>{{moto}}</view>
 
 <!-- 主页 -->
